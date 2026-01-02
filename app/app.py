@@ -24,10 +24,7 @@ if uploaded_file:
     st.success("Dataset loaded successfully!")
 
     # ----------------------------------
-    # LOAD MODELS
-    # ----------------------------------
-    model_uc1 = joblib.load("model_uc1.pkl")
-    model_uc2 = joblib.load("model_uc2.pkl")
+    
 
     # ----------------------------------
     # FEATURE SELECTION
@@ -45,11 +42,7 @@ if uploaded_file:
     X1 = df[features_uc1]
     X2 = df[features_uc2]
 
-    # ----------------------------------
-    # PREDICTIONS
-    # ----------------------------------
-    df['Predicted_Demand_UC1'] = model_uc1.predict(X1)
-    df['Predicted_Demand_UC2'] = model_uc2.predict(X2)
+
 
     # ----------------------------------
     # SIDEBAR USE CASE SELECTION
